@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Génération de PDF avec Thymleaf</h1>
+        <h2><span th:text="${movie.title}">Titre du film</span> (<span th:text="${movie.year}">Année</span>)</h2>
+        <div>
+            Réalisateur : <span th:text="${movie.director}" style="font-weight:bold">Réalisateur</span>
+            <div style="float:right">
+                <img style="width:150px" src="https://avatars.githubusercontent.com/u/1869588?v=4"/>
+            </div>
+        </div>
+        <div>
+            Acteurs
+            <ul th:each="actor: ${movie.actors}">
+                <li th:text="${actor}">Acteur</li>
+            </ul>
+        </div>
+    </body>
+</html>
